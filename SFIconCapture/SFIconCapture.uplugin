@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 3,
+	"VersionName": "1.0.2",
+	"FriendlyName": "Satisfactory Icon Capture",
+	"Description": "Icon capture utility designed for Satisfactory",
+	"Category": "Other",
+	"CreatedBy": "AngryBeaver",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "SFIconCapture",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault"
+		}
+	]
+}
