@@ -3,7 +3,7 @@
 ## Installing:
 1. Clone this repository, or download the current build.
 2. Find the `SFIconCapture` folder at the top level.
-3. Copy or symlink the folder into `<your project>/Plugins/` in your modding environment.
+3. Copy or symlink the folder into `<your project>/Mods/` in your modding environment.
 4. Goto `FactoryGame.uproject` right-click and `Generate Visual Studio Project Files`.
 5. Once it's complete open Visual Studio and build for Editor at least.
 6. Open Your modding environment, you're good to go.
@@ -40,7 +40,7 @@ To counter this you can save and load the Camera's settings with `Camera Data As
 1. Open the Content Browser and go to any folder
 2. Right Click and create a `Miscellaneous > Data Asset` of the type `IconCapture_CameraDataAsset`
 3. Give it whatever name is convenient, and save it.
-4. Go back to your capture scene, open the widget, and assign the capture actor if it not there already.
+4. Go back to your capture scene, open the widget, and assign the capture actor if it isn't already setup.
 5. Adjust the camera to your preferred settings.
 6. Select your data asset from the list in the `Cam Data` picker.
 7. Click the `[Write]` button to save your current data to the asset.
@@ -48,7 +48,7 @@ To counter this you can save and load the Camera's settings with `Camera Data As
 
 Once you have created a library of `Camera Data Assets` you will find it easy to setup batches and capture new elements.
 There is a small library provided of some attempts to mirror the default values for some things found in vanilla.
-
+You can manually edit any of the data assets if needed, but if you modify the plugin they may get overwritten with new updates.
 
 ## Batch Settings:
 Batch mode is for more advanced usage, if you have a lot of things to capture it'll save time.
