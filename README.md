@@ -11,26 +11,28 @@
 
 ## How To Use:
 1. Open the editor and go to the `Satisfactory Icon Capture Content` folder.
-2. We'll need a scene to perform the capture, there's two ways.
+2. We'll need a level to perform the capture, there's two ways.
   * Duplicate `IconCapture_Environment` to another folder in your project (preferred).
   * Or: Add `IconCapture_Functionality` to your existing level (advanced).
 3. Open the editor widget `IconCapture_UserInterfaceWidget`.
 4. Assign an instance of `IconCapture_Functionality` to the widget at the top.
-5. Place something into the scene and hit `Run Capture`.
+5. Place something into the level and hit `Run Capture`.
 6. Check the listed output folder for the expected files.
 
 There's several configuration options and a batch rendering mode which are covered in more detail below.
 The assets used for capturing are flagged as editor only and can be safely included and saved into your mod folder without affecting your released content.
 
+**IMPORTANT:** All information, especially batch information, is saved into the actor on the level. Failing to save your level will not save your capture configuration. Camera data can be saved to assets as well, but you should save your level often.
+
 ## Camera Settings:
-Listed are several properties of the capture camera to provide easy access. It's recommended to use the UI to prevent any changes to the scene elements getting accidentally overwritten.
+Listed are several properties of the capture camera to provide easy access. It's recommended to use the UI to prevent any changes to the level elements getting accidentally overwritten.
 
 * **Distance:** How far back from the object the camera should be.
 * **FOV:** What Field of View should be used, keep in mind this is often best smaller than a player's FOV.
 * **Rotation:** What orientation the camera should face.
 * **Offset:** How far to pan the camera away from the origin of the capture.
 * **[Snap To View]:** Read the editor camera's position and apply it. Framing may differ due to the editor windows's FOV.
-* **[Auto Focus]:** (unimplemented)Attempt to find the bounds of the object in scene and frame it.
+* **[Auto Focus]:** (unimplemented)Attempt to find the bounds of the object in level and frame it.
 * **[Reset]:** Revert the camera to the plugin default values.
 
 ### Camera Data Assets
@@ -40,7 +42,7 @@ To counter this you can save and load the Camera's settings with `Camera Data As
 1. Open the Content Browser and go to any folder
 2. Right Click and create a `Miscellaneous > Data Asset` of the type `IconCapture_CameraDataAsset`
 3. Give it whatever name is convenient, and save it.
-4. Go back to your capture scene, open the widget, and assign the capture actor if it isn't already setup.
+4. Go back to your capture level, open the widget, and assign the capture actor if it isn't already setup.
 5. Adjust the camera to your preferred settings.
 6. Select your data asset from the list in the `Cam Data` picker.
 7. Click the `[Write]` button to save your current data to the asset.
@@ -53,10 +55,10 @@ You can manually edit any of the data assets if needed, but if you modify the pl
 ## Batch Settings:
 Batch mode is for more advanced usage, if you have a lot of things to capture it'll save time.
 
-1. To use batch mode, start by making sure your scene is empty of anything you don't want showing in all your icons.
+1. To use batch mode, start by making sure your level is empty of anything you don't want showing in all your icons.
 2. Then go ahead and set `Capture Mode` to `Class Batch`, you will see some of the UI change slightly to add new features.
 3. Most of these new features are covered in the Output Settings and handle generating the file/folder names relative to the entry.
-4. You may wish to temporarily add something from the batch to the scene to find your initial framing.
+4. You may wish to temporarily add something from the batch to the level to find your initial framing.
 5. Now fill the `Build List` and `Desc List` with your desired entries and optionally their camera settings.
 6. Click Run Capture.
 
@@ -68,11 +70,11 @@ Unless entries in a batch share the same framing it is recommended to use `Camer
 ## Output Settings
 The output settings consist of a series of check boxes for the desired size of image to render, and entries for the path and file name desired.
 
-Several common sizes are listed as defualt check boxes. In Satisfactory the sizes for Building icons are **512 & 256*, the sizes for Item icons are **256 & 128**.
+Several common sizes are listed as default check boxes. In Satisfactory the sizes for Building icons are **512 & 256*, the sizes for Item icons are **256 & 128**.
 The custom option is also available if anything else is desired.
 If no sizes are checked no images will be captured but the UI will assume success.
 
-The output name and path for the scene mode are visible by default, please set them to something you prefer.
+The output name and path for the level mode are visible by default, please set them to something you prefer.
 The defaults include a replacement token %size%, this is necessary to stop multiple sizes overwriting each other as captured.
 More detail can be found in the Adjustment Tokens section.
 
